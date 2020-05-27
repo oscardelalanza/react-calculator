@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class Button extends React.Component {
-  render() {
-    return (
-      <button className="button">{this.props.name}</button>
-    );
-  }
+export default function Button({ name }) {
+  return (
+    <button type="button" className="button">{name}</button>
+  );
 }
 
 Button.defaultProps = {
