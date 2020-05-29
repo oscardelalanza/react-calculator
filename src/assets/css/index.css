@@ -27,10 +27,22 @@
   font-size: 36px;
   height: 100%;
   border: solid 1px #c6c6c6;
+  transition: opacity ease 200ms;
+}
+.button:hover {
+  opacity: 70%;
+  border-radius: 3px;
+}
+.button:active {
+  border: solid 2px #777 !important;
+  transform: translate(1px, 1px);
+}
+.button:focus {
+  outline: 0;
 }
 
 .btn-orange {
-  background: orange;
+  background: #ff7f51;
 }
 
 .btn-50 {
