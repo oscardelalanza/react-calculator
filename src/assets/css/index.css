@@ -11,6 +11,8 @@
   width: 700px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 100px;
+  box-shadow: 0 0 16px #989898;
 }
 
 .display {
