@@ -22,6 +22,21 @@
   font-size: 50px;
 }
 
+.button {
+  width: 25%;
+  font-size: 36px;
+  height: 100%;
+  border: solid 1px #c6c6c6;
+}
+
+.btn-orange {
+  background: orange;
+}
+
+.btn-50 {
+  width: 50%;
+}
+
 .button-panel .group {
   height: 100px;
 }
