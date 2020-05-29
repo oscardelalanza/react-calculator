@@ -13,4 +13,13 @@
   margin-left: auto;
 }
 
+.display {
+  background: gray;
+  height: 100px;
+  color: #fff;
+  text-align: right;
+  padding: 20px;
+  font-size: 50px;
+}
+
 /*# sourceMappingURL=index.css.map */
