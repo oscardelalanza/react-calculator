@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Button({ name, color, width }) {
+export default function Button({ name, color, wide }) {
   let buttonClass = 'button';
 
   if (color) {
     buttonClass += ` ${color}`;
   }
 
-  if (width) {
-    buttonClass += ` ${width}`;
+  if (wide) {
+    buttonClass += ' btn-50';
   }
 
   return (
@@ -20,11 +20,11 @@ export default function Button({ name, color, width }) {
 Button.defaultProps = {
   name: '',
   color: '',
-  width: '',
+  wide: false,
 };
 
 Button.propTypes = {
   name: PropTypes.string,
   color: PropTypes.string,
-  width: PropTypes.string,
+  wide: PropTypes.bool,
 };
