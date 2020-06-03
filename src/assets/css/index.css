@@ -7,6 +7,10 @@
   font-size: 16px;
 }
 
+body {
+  background: #111;
+}
+
 .app {
   width: 700px;
   margin-right: auto;
