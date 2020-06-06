@@ -1,4 +1,4 @@
-import operate from 'operate';
+import operate from './operate';
 
 export default function calculate(calculate = { total: null, next: null, operation: null }, btnName = '') {
   const operators = ['+', '-', 'X', '÷', '%'];
