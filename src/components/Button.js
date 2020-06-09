@@ -4,6 +4,12 @@ import PropTypes from 'prop-types';
 export default class Button extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const { clickHandler, name } = this.props;
+    clickHandler(name);
   }
 
   render() {
@@ -19,7 +25,7 @@ export default class Button extends React.Component {
     }
 
     return (
-      <button type="button" className={buttonClass}>{name}</button>
+      <button type="button" className={buttonClass} onClick={this.handleClick}>{name}</button>
     );
   }
 }
@@ -34,4 +40,5 @@ Button.propTypes = {
   name: PropTypes.string,
   color: PropTypes.string,
   wide: PropTypes.bool,
+  clickHandler: PropTypes.func.isRequired,
 };
