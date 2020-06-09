@@ -1,20 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Button({ name, color, wide }) {
-  let buttonClass = 'button';
-
-  if (color) {
-    buttonClass += ` ${color}`;
+export default class Button extends React.Component {
+  constructor(props) {
+    super(props);
   }
 
-  if (wide) {
-    buttonClass += ' btn-50';
-  }
+  render() {
+    let buttonClass = 'button';
+    const { color, wide, name } = this.props;
 
-  return (
-    <button type="button" className={buttonClass}>{name}</button>
-  );
+    if (color) {
+      buttonClass += ` ${color}`;
+    }
+
+    if (wide) {
+      buttonClass += ' btn-50';
+    }
+
+    return (
+      <button type="button" className={buttonClass}>{name}</button>
+    );
+  }
 }
 
 Button.defaultProps = {
