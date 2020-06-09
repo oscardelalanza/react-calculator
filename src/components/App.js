@@ -12,6 +12,7 @@ export default class App extends React.Component {
       operation: null,
     };
     this.handleClick = this.handleClick.bind(this);
+    this.clearState = this.clearState.bind(this);
   }
 
   clearState() {
