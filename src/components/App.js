@@ -14,14 +14,28 @@ export default class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  clearState() {
+    this.setState({
+      total: null,
+      next: null,
+      operation: null,
+    });
+  }
+
   handleClick(buttonName) {
-    // TODO: update state
+    const operators = ['+', '-', 'X', '÷', '%', '=', 'AC', '+/-'];
+
+    if (buttonName === 'AC') {
+      this.clearState();
+    }
   }
 
   render() {
+    const { total, next, operation } = this.state;
+
     return (
       <div className="app container">
-        <Display />
+        <Display result={(total || next || 0).toString()} />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
