@@ -15,18 +15,14 @@ export default class App extends React.Component {
   }
 
   handleClick(buttonName) {
-    const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-
-    if (numbers.includes(buttonName)) {
-      // TODO: update state
-    }
+    // TODO: update state
   }
 
   render() {
     return (
       <div className="app container">
         <Display />
-        <ButtonPanel />
+        <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
   }
