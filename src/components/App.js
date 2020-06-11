@@ -82,8 +82,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { total, next } = this.state;
-
     return (
       <div className="app container">
         <Display result={this.handleResult()} />
