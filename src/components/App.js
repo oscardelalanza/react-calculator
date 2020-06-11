@@ -13,7 +13,7 @@ export default class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.addDigit = this.addDigit.bind(this);
     this.clearState = this.clearState.bind(this);
-    this.addOperator = this.addOperator.bind(this);
+    this.addOperation = this.addOperation.bind(this);
   }
 
   addDigit(buttonName) {
@@ -34,7 +34,7 @@ export default class App extends React.Component {
     }, () => console.log(this.state));
   }
 
-  addOperator(buttonName) {
+  addOperation(buttonName) {
     this.setState(() => ({ operation: buttonName }), () => console.log(this.state));
   }
 
@@ -51,7 +51,7 @@ export default class App extends React.Component {
     const calculateTriggers = ['=', '+/-'];
 
     if (operators.includes(buttonName)) {
-      this.addOperator(buttonName);
+      this.addOperation(buttonName);
     } else if (buttonName === 'AC') {
       this.clearState();
     } else if (calculateTriggers.includes(buttonName)) {
