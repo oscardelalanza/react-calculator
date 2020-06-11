@@ -13,6 +13,7 @@ export default class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.addDigit = this.addDigit.bind(this);
     this.clearState = this.clearState.bind(this);
+    this.addOperator = this.addOperator.bind(this);
   }
 
   addDigit(buttonName) {
@@ -33,6 +34,10 @@ export default class App extends React.Component {
     }, () => console.log(this.state));
   }
 
+  addOperator(buttonName) {
+    this.setState(() => ({ operation: buttonName }), () => console.log(this.state));
+  }
+
   clearState() {
     this.setState(() => ({
       total: null,
@@ -42,12 +47,15 @@ export default class App extends React.Component {
   }
 
   handleClick(buttonName) {
-    const operators = ['+/-', '%', '÷', 'X', '-', '+'];
+    const operators = ['%', '÷', 'X', '-', '+'];
+    const calculateTriggers = ['=', '+/-'];
 
     if (operators.includes(buttonName)) {
-      // TODO: handle calculations
+      this.addOperator(buttonName);
     } else if (buttonName === 'AC') {
       this.clearState();
+    } else if (calculateTriggers.includes(buttonName)) {
+      // TODO: call calculate
     } else {
       this.addDigit(buttonName);
     }
