@@ -14,6 +14,7 @@ export default class App extends React.Component {
     this.addDigit = this.addDigit.bind(this);
     this.clearState = this.clearState.bind(this);
     this.addOperation = this.addOperation.bind(this);
+    this.handleResult = this.handleResult.bind(this);
   }
 
   addDigit(buttonName) {
@@ -35,7 +36,13 @@ export default class App extends React.Component {
   }
 
   addOperation(buttonName) {
-    this.setState(() => ({ operation: buttonName }), () => console.log(this.state));
+    this.setState(state => {
+      const total = state.next;
+      const next = null;
+      const operation = buttonName;
+
+      return { total, next, operation };
+    }, () => console.log(this.state));
   }
 
   clearState() {
@@ -61,12 +68,25 @@ export default class App extends React.Component {
     }
   }
 
+  handleResult() {
+    let result = '0';
+    const { total, next, operation } = this.state;
+
+    if ((!total && !operation && next) || (total && next && operation)) {
+      result = next;
+    } else if (total && !next && !operation) {
+      result = total;
+    }
+
+    return result;
+  }
+
   render() {
     const { total, next } = this.state;
 
     return (
       <div className="app container">
-        <Display result={(total || next || 0).toString()} />
+        <Display result={this.handleResult()} />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
