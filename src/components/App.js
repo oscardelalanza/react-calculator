@@ -1,7 +1,6 @@
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-import {number} from 'prop-types';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -13,6 +12,7 @@ export default class App extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.addDigit = this.addDigit.bind(this);
+    this.clearState = this.clearState.bind(this);
   }
 
   addDigit(buttonName) {
@@ -33,11 +33,21 @@ export default class App extends React.Component {
     }, () => console.log(this.state));
   }
 
+  clearState() {
+    this.setState(() => ({
+      total: null,
+      next: null,
+      operation: null,
+    }));
+  }
+
   handleClick(buttonName) {
-    const operators = ['AC', '+/-', '%', '÷', 'X', '-', '+', '='];
+    const operators = ['+/-', '%', '÷', 'X', '-', '+'];
 
     if (operators.includes(buttonName)) {
       // TODO: handle calculations
+    } else if (buttonName === 'AC') {
+      this.clearState();
     } else {
       this.addDigit(buttonName);
     }
