@@ -1,7 +1,7 @@
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-import calculate from '../logic/calculate';
+import {number} from 'prop-types';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -12,49 +12,39 @@ export default class App extends React.Component {
       operation: null,
     };
     this.handleClick = this.handleClick.bind(this);
-    this.clearState = this.clearState.bind(this);
     this.addDigit = this.addDigit.bind(this);
-  }
-
-  clearState() {
-    this.setState({
-      total: null,
-      next: null,
-      operation: null,
-    });
   }
 
   addDigit(buttonName) {
     this.setState(state => {
       let next = state.next || '';
 
-      if (buttonName === '.' && !state.next) {
-        next += `0${buttonName}`;
-      } else if (buttonName === '.') {
-        if (!next.includes('.')) {
-          next += buttonName;
-        }
-      } else {
+      if (buttonName !== '.') {
         next += buttonName;
+      } else if (buttonName === '.' && !next.includes(buttonName)) {
+        if (next) {
+          next += buttonName;
+        } else {
+          next = `0${buttonName}`;
+        }
       }
 
       return { next };
-    });
+    }, () => console.log(this.state));
   }
 
   handleClick(buttonName) {
-    const operators = ['+', '-', 'X', '÷', '%', '=', '+/-'];
-    const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
+    const operators = ['AC', '+/-', '%', '÷', 'X', '-', '+', '='];
 
-    if (buttonName === 'AC') {
-      this.clearState();
-    } else if (numbers.includes(buttonName)) {
+    if (operators.includes(buttonName)) {
+      // TODO: handle calculations
+    } else {
       this.addDigit(buttonName);
     }
   }
 
   render() {
-    const { total, next, operation } = this.state;
+    const { total, next } = this.state;
 
     return (
       <div className="app container">
