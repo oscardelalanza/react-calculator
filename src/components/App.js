@@ -37,7 +37,7 @@ export default class App extends React.Component {
 
   addOperation(buttonName) {
     this.setState(state => {
-      const total = state.next;
+      const total = state.next || '0';
       const next = null;
       const operation = buttonName;
 
