@@ -1,6 +1,7 @@
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
+import calculate from '../logic/calculate';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ export default class App extends React.Component {
     this.clearState = this.clearState.bind(this);
     this.addOperation = this.addOperation.bind(this);
     this.handleResult = this.handleResult.bind(this);
+    this.handleCalculate = this.handleCalculate.bind(this);
   }
 
   addDigit(buttonName) {
@@ -32,7 +34,7 @@ export default class App extends React.Component {
       }
 
       return { next };
-    }, () => console.log(this.state));
+    });
   }
 
   addOperation(buttonName) {
@@ -42,7 +44,7 @@ export default class App extends React.Component {
       const operation = buttonName;
 
       return { total, next, operation };
-    }, () => console.log(this.state));
+    });
   }
 
   clearState() {
@@ -51,6 +53,14 @@ export default class App extends React.Component {
       next: null,
       operation: null,
     }));
+  }
+
+  handleCalculate(buttonName) {
+    this.setState(state => {
+      const { total, next, operation } = calculate(state, buttonName);
+
+      return { total, next, operation };
+    });
   }
 
   handleClick(buttonName) {
@@ -62,7 +72,7 @@ export default class App extends React.Component {
     } else if (buttonName === 'AC') {
       this.clearState();
     } else if (calculateTriggers.includes(buttonName)) {
-      // TODO: call calculate
+      this.handleCalculate(buttonName);
     } else {
       this.addDigit(buttonName);
     }
