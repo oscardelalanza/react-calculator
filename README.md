@@ -3,7 +3,7 @@
 > This project is intended to learn how to build a very simple react application. This project has been split into multiple
 > milestones, and each milestone has its own technical requirements   
 
-![screenshot](./screenshot.png)
+![screenshot](./src/assets/img/calculator.png);
 
 ## Built With
 
