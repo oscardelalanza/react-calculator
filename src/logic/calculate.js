@@ -8,8 +8,12 @@ export default function calculate(calculate = { total: null, next: null, operati
   if (btnName === '+/-') {
     total = (total ? (total * -1).toString() : null);
     next = next ? (next * -1).toString() : null;
-  } else if (btnName === '=') {
+  } else if (btnName === '=' && total && next && operation) {
     total = operate(total, next, operation).toString();
+    next = null;
+    operation = null;
+  } else {
+    total = null;
     next = null;
     operation = null;
   }
