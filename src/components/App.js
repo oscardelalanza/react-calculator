@@ -34,17 +34,25 @@ export default class App extends React.Component {
       }
 
       return { next };
-    });
+    }, () => console.log(this.state));
   }
 
   addOperation(buttonName) {
     this.setState(state => {
-      const total = state.next || '0';
+      let total;
       const next = null;
       const operation = buttonName;
 
+      if (state.next) {
+        total = state.next;
+      } else if (state.total && !state.next) {
+        total = state.total;
+      } else {
+        total = '0';
+      }
+
       return { total, next, operation };
-    });
+    }, () => console.log(this.state));
   }
 
   clearState() {
@@ -60,7 +68,7 @@ export default class App extends React.Component {
       const { total, next, operation } = calculate(state, buttonName);
 
       return { total, next, operation };
-    });
+    }, () => console.log(this.state));
   }
 
   handleClick(buttonName) {
