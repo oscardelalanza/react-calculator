@@ -38,7 +38,7 @@ body {
 }
 
 .button:hover {
-  opacity: 0.9;
+  opacity: 70%;
   border-radius: 3px;
 }
 
