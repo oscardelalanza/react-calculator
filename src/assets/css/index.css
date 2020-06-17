@@ -36,17 +36,14 @@ body {
   border: solid 1px #c6c6c6;
   transition: opacity ease 200ms;
 }
-
 .button:hover {
-  opacity: 70%;
+  opacity: 0.7;
   border-radius: 3px;
 }
-
 .button:active {
   border: solid 2px #777 !important;
   transform: translate(1px, 1px);
 }
-
 .button:focus {
   outline: 0;
 }
