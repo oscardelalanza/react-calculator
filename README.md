@@ -11,7 +11,7 @@ You can find the original requirements [here](https://github.com/microverseinc/p
 
 - HTML, CSS, Javascript, SASS
 - React,
-- npm, big.js, prop-types, heroku
+- npm, big.js, prop-types, Heroku
 
 
 ## Live Demo
