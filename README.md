@@ -5,11 +5,13 @@
 
 ![screenshot](./src/assets/img/calculator.png);
 
+You can find the original requirements [here](https://github.com/microverseinc/project-react-calculator)
+
 ## Built With
 
-- HTML, CSS, Javascript
+- HTML, CSS, Javascript, SASS
 - React,
-- npm, big.js, prop-types heroku
+- npm, big.js, prop-types, heroku
 
 
 ## Live Demo
@@ -18,12 +20,46 @@
 
 
 ## Getting Started
-To get a local copy up and running follow these simple example steps.
 
-run the command `git clone git@github.com:oscardelalanza/react-calculator.git`
+This is a very simple React application that consists of a fully working calculator app.
+![mock](./src/assets/img/mock.gif)
+
+> To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-you must have `npm` or `yarn` installed in order to install `node_modules`
+
+- `npm`
+- `git`
+
+### Setup
+
+To clone the project into your local environment do the following
+
+- open a new `terminal` window and navigate to the directory where the project will be stored
+- run the command `git clone git@github.com:oscardelalanza/react-calculator.git`
+- run the command `cd react-calculator` to enter to the project directory
+
+### Install
+
+To install the requires packages do the following
+
+- inside `react-calculator` directory run the command `npm install`
+
+### Usage
+
+To start the local development server do the following
+
+- run the command `npm start` 
+
+### Run tests
+
+- no written tests yet
+
+### Deployment
+
+To build the project do the following
+
+- run the command `npm react-scripts build`
 
 
 ## Authors
