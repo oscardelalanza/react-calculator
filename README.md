@@ -3,7 +3,7 @@
 > This project is intended to learn how to build a very simple react application. This project has been split into multiple
 > milestones, and each milestone has its own technical requirements   
 
-![screenshot](./src/assets/img/calculator.png);
+![screenshot](./src/assets/img/calculator.png)
 
 You can find the original requirements [here](https://github.com/microverseinc/project-react-calculator)
 
