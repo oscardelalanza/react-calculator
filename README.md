@@ -11,7 +11,7 @@ You can find the original requirements [here](https://github.com/microverseinc/p
 
 - HTML, CSS, Javascript, SASS
 - React,
-- npm, big.js, prop-types, heroku
+- npm, big.js, prop-types, Heroku
 
 
 ## Live Demo
@@ -29,38 +29,39 @@ This is a very simple React application that consists of a fully working calcula
 ### Prerequisites
 
 - `npm`
-- `git`
+- `Git`
 
 ### Setup
 
-To clone the project into your local environment do the following
+To clone the project into your local environment do the following.
 
-- open a new `terminal` window and navigate to the directory where the project will be stored
-- run the command `git clone git@github.com:oscardelalanza/react-calculator.git`
-- run the command `cd react-calculator` to enter to the project directory
+- Open a new `terminal` window and navigate to the directory where the project will be stored.
+- Run the command `git clone git@github.com:oscardelalanza/react-calculator.git`.
+- Run the command `cd react-calculator` to enter to the project directory.
 
 ### Install
 
-To install the requires packages do the following
+To install the requires packages do the following.
 
-- inside `react-calculator` directory run the command `npm install`
+- Inside `react-calculator` directory run the command `npm install`.
 
 ### Usage
-
-To start the local development server do the following
-
-- run the command `npm start` 
+ 
+- Use it as a normal `calculator`.
 
 ### Run tests
 
-- no written tests yet
+- This project doesn't contain tests.
 
 ### Deployment
 
-To build the project do the following
+To start the local development server do the following.
 
-- run the command `npm react-scripts build`
+- Run the command `npm start`.
 
+To build the project do the following.
+
+- Run the command `npm react-scripts build`.
 
 ## Authors
 
