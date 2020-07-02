@@ -1,7 +1,7 @@
 # React Calculator
 
 > This project is intended to learn how to build a very simple react application. This project has been split into multiple
-> milestones, and each milestone has its own technical requirements   
+> milestones, and each milestone has its own technical requirements.   
 
 ![screenshot](./src/assets/img/calculator.png)
 
@@ -48,10 +48,6 @@ To install the requires packages do the following.
 ### Usage
  
 - Use it as a normal `calculator`.
-
-### Run tests
-
-- This project doesn't contain tests.
 
 ### Deployment
 
