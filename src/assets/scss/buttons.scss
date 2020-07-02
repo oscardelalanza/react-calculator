@@ -1,0 +1,30 @@
+.button {
+  width: 25%;
+  font-size: 36px;
+  background: #f5913e;
+  height: 100%;
+  border: solid 1px #c6c6c6;
+  transition: opacity ease 200ms;
+
+  &:hover {
+    opacity: 0.7;
+    border-radius: 3px;
+  }
+
+  &:active {
+    border: solid 2px #777 !important;
+    transform: translate(1px, 1px);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.btn-gray {
+  background: #e0e0e0;
+}
+
+.btn-50 {
+  width: 50%;
+}
